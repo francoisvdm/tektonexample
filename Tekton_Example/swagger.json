@@ -1,0 +1,60 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "Tekton_Example",
+    "version" : "1.0.0",
+    "description" : "Tekton_Example"
+  },
+  "paths" : {
+    "/addthree" : {
+      "post" : {
+        "operationId" : "postAddthree",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/Output"
+            }
+          }
+        },
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "description" : "Insert a addthree",
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "schema" : {
+            "$ref" : "#/definitions/Input"
+          },
+          "description" : "The request body for the operation",
+          "required" : true
+        } ]
+      }
+    }
+  },
+  "basePath" : "/tekton_example/v1",
+  "definitions" : {
+    "Input" : {
+      "type" : "object",
+      "properties" : {
+        "number1" : {
+          "type" : "integer"
+        },
+        "number2" : {
+          "type" : "integer"
+        },
+        "number3" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "Output" : {
+      "type" : "object",
+      "properties" : {
+        "answer" : {
+          "type" : "integer"
+        }
+      }
+    }
+  }
+}

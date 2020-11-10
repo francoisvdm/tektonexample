@@ -1,0 +1,10 @@
+
+
+CREATE COMPUTE MODULE postAddthree_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.JSON.Data.answer = InputRoot.JSON.Data.number1 + InputRoot.JSON.Data.number2 + InputRoot.JSON.Data.number3;
+		RETURN TRUE;
+	END;
+
+END MODULE;
